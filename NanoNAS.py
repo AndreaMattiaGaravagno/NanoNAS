@@ -65,8 +65,6 @@ class NanoNAS :
 
         #classifier
         x = tf.keras.layers.GlobalAveragePooling2D()(x)
-        input_shape = x.shape[1]
-        number_of_mac = number_of_mac + (input_shape * x.shape[1])
         x = tf.keras.layers.Dropout(0.5)(x)
         outputs = tf.keras.layers.Dense(self.num_classes, activation='softmax')(x)
         number_of_mac = number_of_mac + (x.shape[1] * outputs.shape[1])
