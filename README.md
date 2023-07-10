@@ -32,10 +32,10 @@ For further details of the comparison refer to "A hardware-aware neural architec
 # How to use
 
 * In search.py modify: 
-  * "path_to_training_set" and "path_to_test_set" variables to use your own dataset ([a small-dataset suggestion](https://www.kaggle.com/datasets/hasnainjaved/melanoma-skin-cancer-dataset-of-10000-images?resource=download)).
+  * "path_to_training_set" and "path_to_test_set" variables to use your own dataset ([a small-dataset suggestion](https://www.kaggle.com/datasets/hasnainjaved/melanoma-skin-cancer-dataset-of-10000-images?resource=download))
   * "input_size" to set the network's input size (50x50 is a good starting point for microcontrollers)
   * "RAM_upper_bound" and "Flash_upper_bound" according to your microcontroller
-  * "MACC_upper_bound" according to the maximum desired number of MACC (a good starting point is given by multiplying the [CoreMark](https://www.eembc.org/coremark/) score of your microcontroller by 10000).
+  * "MACC_upper_bound" according to the maximum desired number of MACC (a good starting point is given by multiplying the [CoreMark](https://www.eembc.org/coremark/) score of your microcontroller by 10000)
 * Run search.py
 
 In the folder "results", you will find a copy of the trained Keras model and the corresponding fully quantized Tflite model at uint8, ready to run on a microcontroller.
