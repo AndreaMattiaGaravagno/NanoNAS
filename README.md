@@ -4,8 +4,9 @@ A small hardware-aware neural architecture search (HW NAS) algorithm targeting l
 It provides small CNNs that can fit the constraints of low-RAM microcontrollers. 
 
 # News
+* **2023/08** NanoNAS will be presented in an [invited talk](https://www.tinyml.org/event/tinyml-talks-a-hardware-aware-neural-architecture-search-algorithm-targeting-ultra-low-power-microcontrollers) by the tinyML Foundation.
 * **2023/07** NanoNAS has been **updated**: now you can directly put the **RAM** and **Flash** available on your microcontroller as **search constraints**.
-* **2023/04** NanoNAS is accepted to PRIME 2023 conference under the title: "A hardware-aware neural architecture search algorithm targeting low-end microcontrollers".
+* **2023/04** NanoNAS is accepted to the PRIME 2023 conference under the title: "A hardware-aware neural architecture search algorithm targeting low-end microcontrollers".
 
 # An overview of its performances
 
