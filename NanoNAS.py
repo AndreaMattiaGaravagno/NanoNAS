@@ -245,11 +245,6 @@ class NanoNAS :
         print(f"Elapsed time (training): {end-start}\n")
 
     def apply_uint8_post_training_quantization_process(self) :
-
-        def representative_dataset():
-            for data in train_ds.rebatch(1).take(150) :
-                yield [tf.dtypes.cast(data[0], tf.float32)]
-
         train_ds, validation_ds = self.load_training_set()
 
         model = tf.keras.models.load_model(self.path_to_resulting_model)

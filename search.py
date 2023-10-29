@@ -10,9 +10,9 @@ input_shape = (50,50,3)
 #...class_b/
 #......b_image_1.jpg
 #......b_image_2.jpg
-path_to_training_set = '../../datasets/melanoma_cancer_dataset/train'
+path_to_training_set = '../datasets/melanoma_cancer_dataset/train'
 val_split = 0.3
-path_to_test_set = '../../datasets/melanoma_cancer_dataset/test'
+path_to_test_set = '../datasets/melanoma_cancer_dataset/test'
 
 #whether or not to cache datasets in memory
 #if the dataset cannot fit in the main memory, the application will crash
