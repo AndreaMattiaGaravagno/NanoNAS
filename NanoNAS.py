@@ -275,11 +275,7 @@ class NanoNAS :
             label_mode='categorical',
             color_mode=color_mode,
             batch_size=batch_size,
-            image_size=self.input_shape[0:2],
-            shuffle=True,
-            seed=11,
-            validation_split=self.val_split,
-            subset='training'
+            image_size=self.input_shape[0:2]
         )
 
         if self.cache :
