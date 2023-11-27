@@ -226,7 +226,7 @@ class NanoNAS :
         model = self.Model(self.resulting_architecture['k'], self.resulting_architecture['c'])[0]
         self.compile_model(model, training_learning_rate)
         model_checkpoint_callback = tf.keras.callbacks.ModelCheckpoint(
-            filepath= self.path_to_resulting_model,
+            filepath= str(self.path_to_resulting_model),
             save_weights_only=False, monitor='val_accuracy',
             mode='auto', save_best_only=True, verbose=1)
 

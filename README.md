@@ -47,8 +47,8 @@ In the folder "results", you will find a copy of the trained Keras model and the
 **Hint**: try multiple runs to find the best result.
 
 # Requirement
-* Python 3.9.15
-* Tensorflow 2.11.0
+* Python 3.9.15 or later
+* Tensorflow 2.11.0 or later 
 
 # Citation
 If you find the project helpful, please consider citing our paper:
