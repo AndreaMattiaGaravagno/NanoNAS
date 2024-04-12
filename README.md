@@ -6,6 +6,9 @@ It provides small CNNs that can fit the constraints of low-RAM microcontrollers.
 If you want a more repeatable and accurate similar HW NAS at the expense of using a GPU, check [ColabNAS](https://github.com/AndreaMattiaGaravagno/ColabNAS).
 
 # News
+* **2024/04** NanoNAS has been accepted for pubblication to IEEE Sensors Letters under the title: ["An Affordable Hardware-aware Neural Architecture Search for Deploying Convolutional Neural Networks on Ultra-low-power Computing Platforms"](https://ieeexplore.ieee.org/document/10496186)
+* **2024/01** NanoNAS has been presented to the IEEE 42nd International Conference on Consumer Electronics under the title ["Running hardware-aware neural architecture search on embedded devices under 512MB of RAM"](https://ieeexplore.ieee.org/document/10444268), winning the [Best Session Presentation Award](https://icce.org/2024/awards/).
+* **2024/01** NanoNAS can now run on Jetson Nano, Raspberry Pi 5, Raspberry Pi 4, Raspberry Pi 3, and Raspberry Pi Zero 2 W
 * **2023/09** The tinyML talk featuring NanoNAS is available on [YouTube](https://www.youtube.com/watch?v=syY4mwSeC6Q).
 * **2023/08** NanoNAS will be presented in an [invited talk](https://www.tinyml.org/event/tinyml-talks-a-hardware-aware-neural-architecture-search-algorithm-targeting-ultra-low-power-microcontrollers) by the tinyML Foundation. Here is the [link](https://us02web.zoom.us/webinar/register/2216905294136/WN_fQRnR2SuQzuEAqhvO-AWeg#/registration) for the registration to the webinar.
 * **2023/07** NanoNAS has been **updated**: now you can directly put the **RAM** and **Flash** available on your microcontroller as **search constraints**.
@@ -46,12 +49,28 @@ In the folder "results", you will find a copy of the trained Keras model and the
 
 **Hint**: try multiple runs to find the best result.
 
+# How to use on Raspberry Pi and Jetson Nano
+
+* Enable multiarch support for amd64 (it's needed to run the STM32's script used to measure Flash and RAM occupancy of candidates)
+  * see https://wiki.debian.org/Multiarch/HOWTO
+* Install libstdc++6 for amd64
+* I also recommend the usage of [zram](https://wiki.debian.org/ZRam) 
+
 # Requirement
 * Python 3.9.15 or later
 * Tensorflow 2.11.0 or later 
 
 # Citation
-If you find the project helpful, please consider citing our paper:
+If you find the project useful, please consider citing our works:
+
+    @inproceedings{garavagno2024running,
+        title={Running hardware-aware neural architecture search on embedded devices under 512MB of RAM},
+        author={Garavagno, Andrea Mattia and Ragusa, Edoardo and Frisoli, Antonio and Gastaldo, Paolo},
+        booktitle={2024 IEEE International Conference on Consumer Electronics (ICCE)},
+        pages={1--2},
+        year={2024},
+        organization={IEEE}
+    }
 
     @inproceedings{garavagno2023hardware,
         title={A hardware-aware neural architecture search algorithm targeting low-end microcontrollers},

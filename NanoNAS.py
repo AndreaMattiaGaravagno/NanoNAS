@@ -35,17 +35,15 @@ class NanoNAS :
 
         inputs = tf.keras.Input(shape=self.input_shape)
 
-        #preprocessing pipeline
-        x = tf.keras.layers.Rescaling(1./255)(inputs)
-        x = tf.keras.layers.BatchNormalization()(x)
-
         #convolutional base
         n = k
         multiplier = 2
 
         #first convolutional layer
         c_in = self.input_shape[2]
-        x = tf.keras.layers.Conv2D(n, kernel_size, activation='relu', padding='same')(x)
+        x = tf.keras.layers.Conv2D(n, kernel_size, padding='same')(inputs)
+        x = tf.keras.layers.BatchNormalization()(x)
+        x = tf.keras.layers.Activation('relu')(x)
         macc = macc + (c_in * kernel_size[0] * kernel_size[1] * x.shape[1] * x.shape[2] * x.shape[3])
 
         #adding cells
@@ -56,9 +54,10 @@ class NanoNAS :
             n = np.ceil(n * multiplier)
             multiplier = multiplier - 2**-i
             x = tf.keras.layers.MaxPooling2D(pool_size=pool_size, strides=pool_strides, padding='valid')(x)
+            x = tf.keras.layers.Conv2D(n, kernel_size, padding='same')(x)
             x = tf.keras.layers.BatchNormalization()(x)
+            x = tf.keras.layers.Activation('relu')(x)
             c_in = x.shape[3]
-            x = tf.keras.layers.Conv2D(n, kernel_size, activation='relu', padding='same')(x)
             macc = macc + (c_in * kernel_size[0] * kernel_size[1] * x.shape[1] * x.shape[2] * x.shape[3])
 
         #classifier
@@ -204,8 +203,12 @@ class NanoNAS :
                 q = Queue()
                 p = Process(target=self.evaluate_model_process, args=(q, k, c,))
                 p.start()
-                current_architecture = q.get()
                 p.join()
+                if q.empty() :
+                    #the machine was not able to train the architecture for one epoch
+                    current_architecture = {'k': k, 'c': c, 'max_val_acc': -1}
+                else :
+                    current_architecture = q.get()
                 print(f"\n\n{current_architecture}\n\n")
             new_architecture = previous_architecture
             k = k + 1
