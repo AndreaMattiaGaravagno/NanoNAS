@@ -63,6 +63,14 @@ In the folder "results", you will find a copy of the trained Keras model and the
 # Citation
 If you find the project useful, please consider citing our works:
 
+    @article{garavagno2024affordable,
+      title={An Affordable Hardware-aware Neural Architecture Search for Deploying Convolutional Neural Networks on Ultra-low-power Computing Platforms},
+      author={Garavagno, Andrea Mattia and Ragusa, Edoardo and Frisoli, Antonio and Gastaldo, Paolo},
+      journal={IEEE Sensors Letters},
+      year={2024},
+      publisher={IEEE}
+    }
+
     @inproceedings{garavagno2024running,
         title={Running hardware-aware neural architecture search on embedded devices under 512MB of RAM},
         author={Garavagno, Andrea Mattia and Ragusa, Edoardo and Frisoli, Antonio and Gastaldo, Paolo},
