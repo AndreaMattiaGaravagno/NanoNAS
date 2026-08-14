@@ -55,7 +55,7 @@ In the folder "results", you will find a copy of the trained Keras model and the
   * see https://wiki.debian.org/Multiarch/HOWTO
 * Install libstdc++6 for amd64
 * I also recommend the usage of [zram](https://wiki.debian.org/ZRam)
-* When the search procedure is running it is better to disable unattended-upgrades and other services that could waste precious resources (e.g., multipathd or ModemManager if not needed)
+* Run it offline to avoid unattended upgrades or other interference wasting precious resources
 
 
 # Requirement
