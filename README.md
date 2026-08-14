@@ -54,7 +54,9 @@ In the folder "results", you will find a copy of the trained Keras model and the
 * Enable multiarch support for amd64 (it's needed to run the STM32's script used to measure Flash and RAM occupancy of candidates)
   * see https://wiki.debian.org/Multiarch/HOWTO
 * Install libstdc++6 for amd64
-* I also recommend the usage of [zram](https://wiki.debian.org/ZRam) 
+* I also recommend the usage of [zram](https://wiki.debian.org/ZRam)
+* When the search procedure is running it is better to disable unattended-upgrades and other services that could waste precious resources (e.g., multipathd or ModemManager if not needed)
+
 
 # Requirement
 * Python 3.9.15 or later
